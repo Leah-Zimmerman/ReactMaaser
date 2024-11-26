@@ -12,7 +12,7 @@ const MaaserPage = () => {
   const [maaserTransactions,setMaaserTransactions] = useState([]);
 
   const getMaaserTransactions = async()=>{
-    const {data} = await axios.get('/api/money/getMaaserTransactions');
+    const {data} = await axios.get('/api/maaser/getMaaserTransactions');
     setMaaserTransactions(data);
   }
   useEffect(() => {

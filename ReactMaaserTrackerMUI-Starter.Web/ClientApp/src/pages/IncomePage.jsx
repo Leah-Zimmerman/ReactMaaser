@@ -41,12 +41,12 @@ const IncomePage = () => {
   const [groupedIncomeTransactions, setGroupedIncomeTransactions] = useState([]);
 
   const getIncomeTransactions = async () => {
-    const { data } = await axios.get('/api/money/getIncomeTransactions');
+    const { data } = await axios.get('/api/income/getIncomeTransactions');
     setIncomeTransactions(data);
   }
 
   const getIncomeTransactionsGroupedBySource = async () => {
-    const { data } = await axios.get('/api/money/getGroupedIncomeTransactions');
+    const { data } = await axios.get('/api/income/getGroupedIncomeTransactions');
     setGroupedIncomeTransactions(data);
   }
 

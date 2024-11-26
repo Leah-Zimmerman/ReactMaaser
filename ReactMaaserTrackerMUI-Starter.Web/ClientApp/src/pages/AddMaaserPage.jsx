@@ -11,7 +11,7 @@ const AddMaaserPage =() => {
     const nav = useNavigate();
 
     const addMaaser=async()=>{
-        await axios.post('/api/money/addMaaser', {recipient, amount, date:selectedDate});
+        await axios.post('/api/maaser/addMaaser', {recipient, amount, date:selectedDate});
         nav('/maaser');
     }
 

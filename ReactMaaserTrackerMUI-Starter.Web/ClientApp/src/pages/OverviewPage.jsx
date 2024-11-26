@@ -9,11 +9,11 @@ const OverviewPage = () => {
 
   useEffect(() => {
     const getTotalIncome = async()=>{
-      const {data} = await axios.get('/api/money/getTotalIncome');
+      const {data} = await axios.get('/api/income/getTotalIncome');
       setTotalIncome(data.totalIncome);
     }
     const getTotalMaaser = async()=>{
-      const {data} = await axios.get('/api/money/getTotalMaaser');
+      const {data} = await axios.get('/api/maaser/getTotalMaaser');
       setTotalMaaser(data.totalMaaser);
     }
     getTotalIncome();

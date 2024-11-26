@@ -12,7 +12,7 @@ const AddIncomePage = () => {
     const nav = useNavigate();
 
     const getSources = async () => {
-        const { data } = await axios.get('/api/money/getSources');
+        const { data } = await axios.get('/api/source/getSources');
         setSources(data);
     };
     useEffect(() => {
@@ -20,8 +20,7 @@ const AddIncomePage = () => {
     }, []);
 
     const addIncome=async()=>{
-        await axios.post('/api/money/addIncome',{sourceId:selectedSource.id,amount:amount,date:selectedDate});
-            //?sourceId=${selectedSource.id}&amount=${amount}&date=${dayjs(selectedDate).format('YYYY-MM-DD')}`);
+        await axios.post('/api/income/addIncome',{sourceId:selectedSource.id,amount:amount,date:selectedDate});
         nav('/income');
     }
     

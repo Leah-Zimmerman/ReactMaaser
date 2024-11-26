@@ -9,7 +9,7 @@ const ManageSourcesPage = () => {
   const [editingSource, setEditingSource] = useState(null);
 
   const getSources = async()=>{
-        const {data} = await axios.get('/api/money/getSources');
+        const {data} = await axios.get('/api/source/getSources');
         setSources(data);
       };
 
@@ -31,16 +31,16 @@ const ManageSourcesPage = () => {
 
   const handleAddEdit = async() => {
     if (editingSource) {
-      await axios.post('/api/money/editSource',selectedSource);
+      await axios.post('/api/source/editSource',selectedSource);
     } else {
-      await axios.post(`/api/money/addSource?name=${selectedSource.name}`);
+      await axios.post(`/api/source/addSource?name=${selectedSource.name}`);
     }
     getSources();
     handleClose();
   };
 
   const handleDelete = async(sourceId) => {
-    await axios.post(`/api/money/deleteSource?id=${sourceId}`);
+    await axios.post(`/api/source/deleteSource?id=${sourceId}`);
     getSources();
   };
 
